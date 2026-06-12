@@ -1,0 +1,31 @@
+The Kubernetes application cluster was successfully deployed and configured to ensure scalability, reliability, and high availability.
+
+Cluster Components:
+• Kubernetes Namespace (week12-microservices)
+• Deployment with 3 running replicas
+• Service for internal communication
+• Ingress Controller for external access
+• Horizontal Pod Autoscaler (HPA)
+• ConfigMap for application configuration
+• Secret for secure credential management
+
+Cluster Status:
+• Application Pods: Running
+• Replicas Available: 3/3
+• Service Status: Active
+• Ingress Routing: Configured
+• Autoscaling: Enabled (3–10 replicas)
+• Rolling Updates: Supported
+• Rollback Capability: Enabled
+
+Verification Commands:
+
+kubectl get pods -n week12-microservices
+kubectl get deployments -n week12-microservices
+kubectl get svc -n week12-microservices
+kubectl get ingress -n week12-microservices
+kubectl get hpa -n week12-microservices
+
+Deliverable Outcome:
+A stable and scalable Kubernetes cluster was deployed with multiple application replicas, service discovery, ingress routing, auto-scaling, health monitoring, rolling updates, and rollback support to ensure reliable containerized application management.
+
