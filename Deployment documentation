@@ -1,0 +1,44 @@
+Deployment Documentation
+Project Overview
+This project demonstrates the deployment of a Dockerized microservice into a Kubernetes cluster using Deployments, Services, Ingress, ConfigMaps, Secrets, and Horizontal Pod Autoscaling (HPA).
+Deployment Steps
+
+1. Create Namespace
+   kubectl apply -f namespace.yaml
+
+2. Apply ConfigMap and Secret
+   kubectl apply -f configmap.yaml
+   kubectl apply -f secret.yaml
+
+3. Deploy Application
+   kubectl apply -f deployment.yaml
+
+4. Create Service
+   kubectl apply -f service.yaml
+
+5. Configure Autoscaling
+   kubectl apply -f hpa.yaml
+
+6. Configure Ingress
+   kubectl apply -f ingress.yaml
+
+Verification Commands
+
+kubectl get pods -n week12-microservices
+kubectl get deployments -n week12-microservices
+kubectl get svc -n week12-microservices
+kubectl get ingress -n week12-microservices
+kubectl get hpa -n week12-microservices
+
+Rolling Update
+
+kubectl set image deployment/week12-microservice week12-microservice=week12-microservice:v2
+
+kubectl rollout status deployment/week12-microservice
+
+Rollback Procedure
+
+kubectl rollout undo deployment/week12-microservice
+
+Expected Outcome
+A stable and scalable Kubernetes environment with multiple application replicas, service discovery, ingress routing, autoscaling, rolling updates, and rollback support.
