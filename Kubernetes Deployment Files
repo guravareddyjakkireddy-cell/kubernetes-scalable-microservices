@@ -1,0 +1,42 @@
+Kubernetes Deployment Files
+
+Deliverable: Kubernetes Deployment Files
+
+The following Kubernetes manifest files were created and used for application deployment:
+
+1. namespace.yaml
+   - Creates an isolated Kubernetes namespace for the application.
+
+2. deployment.yaml
+   - Deploys the microservice with 3 replicas.
+   - Configures rolling updates, health checks, and resource limits.
+
+3. service.yaml
+   - Exposes the application internally within the cluster.
+
+4. hpa.yaml
+   - Configures Horizontal Pod Autoscaling (HPA).
+   - Automatically scales pods based on CPU utilization.
+
+5. configmap.yaml
+   - Stores application configuration settings.
+
+6. secret.yaml
+   - Stores sensitive credentials securely.
+
+7. ingress.yaml
+   - Provides external access and routing to the application.
+
+Deployment Command:
+
+kubectl apply -f namespace.yaml
+kubectl apply -f configmap.yaml
+kubectl apply -f secret.yaml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f hpa.yaml
+kubectl apply -f ingress.yaml
+
+Expected Outcome:
+All Kubernetes resources are successfully created and managed within the cluster, ensuring scalability, reliability, and efficient container orchestration.
+
